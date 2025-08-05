@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -24,3 +25,14 @@ class ItemView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+@api_view(['GET'])
+def get_menu(request):
+    menu = [
+        {"name": "Paneer Butter Masala","description": "Creamy tomato-based curry with paneer cubes","price": 220.00},
+        {"name": "Veg Biryani","description": "Fragrant rice cooked with vegetables and spices","price": 180.00},
+        {"name": "Masala Dosa","description": "Crispy dosa filled with spiced potato filling","price": 90.00}]
+        return Response(menu)
