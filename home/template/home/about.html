@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Us - Restaurant</title>
+        <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #333; padding: 10px; }
+        header nav a { color: white; margin: 0 15px; text-decoration: none; }
+        .container { padding: 20px; }
+        img { max-width: 100%; height: auto; border-radius: 10px; }
+        </style>
+    </head>
+    <body>
+    <header>
+<nav>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'about' %}">About</a>
+</nav>
+</header>
+
+<div class="container">
+<h1>About Our Restaurant</h1>
+<img src="https://via.placeholder.com/800x400" alt="Restaurant Image">
+<p>Welcome to our restaurant! We have been serving delicious meals since 2010.  
+Our chefs use only the freshest ingredients to prepare a wide variety of dishes.  
+Whether youre here for a family dinner, a romantic evening, or a quick lunch,  
+we promise an unforgettable experience.</p>
+</div>
+
+</body>
+</html>
