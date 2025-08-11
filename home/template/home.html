@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ restaurant_name }} - Welcome</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background-color: #fffaf5;
+color: #333;
+}
+header {
+background-color: #ff6f61;
+padding: 15px 0;
+text-align: center;
+color: white;
+}
+header h1 {
+margin: 0;
+font-size: 2.5rem;
+}
+.intro {
+text-align: center;
+padding: 50px 20px;
+}
+.intro h2 {
+color: #ff6f61;
+font-weight: bold;
+}
+.btn-custom {
+background-color: #ff6f61;
+color: white;
+border-radiu}}}s: 30px;
+padding: 10px 20px;
+font-size: 1.2em;
+}
+footer {
+background-color: #ff6f61;
+color: white;
+text-align: center;
+padding: 15px 0;
+margin-top: 50px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>{{ restaurant_name }}</h1>
+</header>
+
+<section class="intro">
+<h2>Welcome to {{ restaurant_name }}</h2>
+<p>Enjoy delicious meals made with love. Explore our menu and place your order online!</p>
+<a href="{% url 'menu' %}" class="btn btn-custom">View Menu</a>
+</section>
+
+<footer>
+<p>&copy; {{ restaurant_name }} - {{ now|date:"Y" }}</p>
+</footer>
+
+</body>
+</html>}
