@@ -26,3 +26,11 @@ def homepage(request):
             }
             return render(request, "home/index.html", context)
 }
+
+def reservations(request):
+    context = {
+        "restaurant_name": "Delicious Bites",
+        "restaurant_phone": "+91-9876543210"
+        }
+        return render(request, "home/reservations.html", context)
+    }
