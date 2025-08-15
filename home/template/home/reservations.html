@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reservations - {{ restaurant_name }}</title>
+        <style>
+        body {
+                font-family: Arial, sans-serif;
+                background-color: #fafafa;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+        header {
+                background-color: #e67e22;
+                padding: 15px 0;
+                color: white;
+                font-size: 1.5rem;
+            }
+        main {
+                margin-top: 50px;
+            }
+        main p {
+                font-size: 1.2rem;
+                color: #555;
+                }
+        </style>
+    </head>
+<body>
+<header> Reservations    </header>
+<main>
+    <p>Our online reservation system is coming soon!  
+    For now, please call us at <strong>{{ restaurant_phone }}</strong> to book your table.</p>
+</main>
+</body>
+</html>
