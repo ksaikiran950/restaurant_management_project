@@ -46,6 +46,14 @@
         </style>
 </head>
     <body>
+        {% extends "home/base.html" %}
+
+        {% block title %}Home - {{ restaurant_name }}{% endblock %}
+
+        {% block content %}
+        <h1>Welcome to {{ restaurant_name }}</h1>
+        <p>We serve fresh and delicious meals every day!</p>
+        {% endblock %}
         <header>
             <h1>{{ restaurant_name }}</h1>
         </header>
