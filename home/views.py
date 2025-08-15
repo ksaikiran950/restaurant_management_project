@@ -1,10 +1,9 @@
 from django.shortcuts import render
+from django.config import settings
 
 def about(request):
         return render(request, 'home/about.html')
 
-from django.shortcuts import render
-from django.conf import settings
 
 # Try importing Restaurant model if it exists
 try:
