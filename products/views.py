@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Item
+from .models import Item,menu
 from .serializers import ItemSerializer
 
 '''
@@ -36,3 +36,16 @@ def get_menu(request):
         {"name": "Veg Biryani","description": "Fragrant rice cooked with vegetables and spices","price": 180.00},
         {"name": "Masala Dosa","description": "Crispy dosa filled with spiced potato filling","price": 90.00}]
         return Response(menu)
+
+def menu_list(request):
+    try:
+        menu_items = Menu.objects.all()
+        return render(request, 'products/menu_list.html', {'menu_items': menu_items})
+    except Exception as e:
+        # Log the error (optional, but recommended)
+        print(f"Error fetching menu items: {e}")
+        # Show a friendly error message
+        return HttpResponse("<h2>Sorry! We couldn't load the menu right now.</h2><p>Please try again later.</p>",
+status=500
+)
+
