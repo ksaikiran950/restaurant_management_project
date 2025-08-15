@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Restaurant{% endblock %}</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            main {
+                flex: 1;
+            }
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 15px 0;
+                font-size: 14px;
+            }
+            footer span {
+                display: block;
+                margin-top: 5px;
+                font-style: italic;
+                color: #ddd;
+            }
+        </style>
+</head>
+    <body>
+        <header>
+                {% block header %}{% endblock %}
+        </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; {{ year }} {{ restaurant_name }}  
+        <span>Opening Hours: MonFri: 11am9pm, SatSun: 10am10pm</span>
+    </footer>
+</body>
+</html>
