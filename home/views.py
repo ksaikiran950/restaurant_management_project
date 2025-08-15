@@ -14,6 +14,10 @@ try:
 def homepage(request):
     restaurant_name = getattr(settings, "RESTAURANT_NAME", "My Restaurant")
     phone_number = getattr(settings, "RESTAURANT_PHONE", "Not available")
+    return render(request,"home/home.html",{
+        "restaurant_name":"Delicious Bites",
+        "year":datetime.now().year
+    })
 
     # If model exists and has at least one restaurant entry, override values
     if Restaurant and Restaurant.objects.exists():
