@@ -11,3 +11,4 @@ class FeedbackForm(forms.ModelForm):
                 'placeholder': 'Enter your feedback here...'
                 })
 }
+
