@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.config import settings
 
 def about(request):
@@ -37,3 +37,17 @@ def reservations(request):
         }
         return render(request, "home/reservations.html", context)
     }
+
+
+
+from .forms import ContactForm
+
+def homepage(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save to DB
+            return redirect('home')  # Redirect after submission
+        else:
+            form = ContactForm()
+        return render(request, 'home/homepage.html', {'form': form})
