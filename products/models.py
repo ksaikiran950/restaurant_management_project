@@ -8,3 +8,13 @@ class Item(models.Model):
 
     def __str__(self):
         return str(self.item_name)
+
+class RestaurantLocation(models.Model):
+    address = models.CharField(max_length=225)
+    city =models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    Zip_code = models.CharField(max_length=20)
+
+
+    def __str__(self):
+        return f"{self.address},{self.city},{self.state} - {self.zip_code}"
