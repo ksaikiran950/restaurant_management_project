@@ -7,7 +7,7 @@ from django.contrib import adminfrom .models import MenuItem
 class MenuItemAdmin(admin.ModelAdmin):
     list_display = ['name', 'restaurant', 'price', 'is_available', 'created_at']
     list_filter = ['restaurant', 'is_available']
-    search_fields = ['name', 'description']
+    search_fields= ['name', 'description']
 
 
 
