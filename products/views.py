@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Item,menu
+from .models import Item,menu,MenuItem
 from .serializers import ItemSerializer
 
 '''
@@ -49,3 +49,7 @@ def menu_list(request):
 status=500
 )
 
+
+def menu_page(request):
+    items = MenuItem.objects.all()
+    return render(request, "products/menu.html", {"items": items})
