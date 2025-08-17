@@ -130,7 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add this at the bottom
 RESTAURANT_NAME = "Tasty Treats Restaurant"
-RESTAURANT_PHONE = "+91 98765 43210"
+RESTAURANT_PHONE = "+91 999999999"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
