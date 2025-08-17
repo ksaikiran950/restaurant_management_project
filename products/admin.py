@@ -17,3 +17,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Item,ItemAdmin)
+
+@admin.register(RestaurantLocation)
+class RestaurantLocationAdmin(admin.ModelAdmin):
+    list_display = ("address", "city", "state", "zip_code")
