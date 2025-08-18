@@ -18,3 +18,17 @@ class RestaurantLocation(models.Model):
 
     def __str__(self):
         return f"{self.address}, {self.city}, {self.state} {self.zip_code}"
+
+
+
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=150)
+    address = models.TextField()
+    phone_number = models.CharField(max_length=15)
+
+# Opening hours stored as a JSON object
+    opening_hours = models.JSONField(default=dict, blank=True)
+
+    def __str__(self):
+        return self.name
