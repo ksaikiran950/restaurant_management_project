@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.config import settings
-
+from .forms import ContactForm
 def about(request):
         return render(request, 'home/about.html')
 
@@ -40,7 +40,6 @@ def reservations(request):
 
 
 
-from .forms import ContactForm
 
 def homepage(request):
     if request.method == 'POST':
