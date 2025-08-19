@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from django.config import settings
 from .forms import ContactForm
+from products.models import MenuItem
+
 def about(request):
         return render(request, 'home/about.html')
 
@@ -11,24 +13,13 @@ try:
     Restaurant = None
 
 def homepage(request):
-    restaurant_name = getattr(settings, "RESTAURANT_NAME", "My Restaurant")
-    phone_number = getattr(settings, "RESTAURANT_PHONE", "Not available")
-    return render(request,"home/home.html",{
-        "restaurant_name":"Delicious Bites",
-        "year":datetime.now().year
-    })
+    query = request.GET.get('q')
+    if query:
+        menu_items = MenuItem.objects.filter(name_icontains=query)
+        else:
+            menu_items = MenuItem.objects.all()
+            return render(request,"home/index.html",{"menu_items": menu_items,"query":query})
 
-    # If model exists and has at least one restaurant entry, override values
-    if Restaurant and Restaurant.objects.exists():
-        restaurant = Restaurant.objects.first()
-        restaurant_name = restaurant.restaurant_name        
-        phone_number = restaurant.phone_number
-        context = {
-            "restaurant_name": restaurant_name,
-            "phone_number": phone_number    
-            }
-            return render(request, "home/index.html", context)
-}
 
 def reservations(request):
     context = {
