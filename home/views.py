@@ -41,3 +41,15 @@ def homepage(request):
         else:
             form = ContactForm()
         return render(request, 'home/homepage.html', {'form': form})
+
+
+def contact_view(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("contact_success")  # redirect to a success page
+    else:
+        form = ContactForm()
+
+    return render(request, "home/contact.html", {"form": form})
