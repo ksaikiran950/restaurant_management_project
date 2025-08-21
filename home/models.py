@@ -25,7 +25,7 @@ class RestaurantLocation(models.Model):
 class Restaurant(models.Model):
     name = models.CharField(max_length=150)
     address = models.TextField()
-    phone_number = models.CharField(max_length=15)
+    phone = models.CharField(max_length=15)
 
 # Opening hours stored as a JSON object
     opening_hours = models.JSONField(default=dict, blank=True)
