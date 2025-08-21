@@ -17,4 +17,8 @@ class FeedbackForm(forms.ModelForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactSubmission        
-        fields = ['name', 'email']
+        fields = ['name', 'email','message']
+
+# Override default validation
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'placeholder': 'Enter your email'}))
+    message = forms.CharField(required=True, widget=forms.Textarea(attrs={'placeholder': 'Type your message here...'}))
