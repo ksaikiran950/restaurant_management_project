@@ -29,6 +29,7 @@ class Restaurant(models.Model):
 
 # Opening hours stored as a JSON object
     opening_hours = models.JSONField(default=dict, blank=True)
+    logo = models.ImageField(upload_to="restaurant_logos/",blank=True,null=True)
 
     def __str__(self):
         return self.name
