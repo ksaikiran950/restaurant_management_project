@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from .forms import ContactForm
 from products.models import MenuItem
+from .models import Restaurant
 
 # Optional Restaurant import
 try:
@@ -44,7 +45,7 @@ def contact_view(request):
     return render(request, "home/contact.html", {"form": form})
 }
 
-from .models import Restaurant
+
 def home(request):
     restaurant = Restaurant.objects.first()  # assume one restaurant
 
@@ -56,3 +57,9 @@ def home(request):
         "restaurant": restaurant,
         "cart_cot, "home/home.html", context)
 }
+
+
+
+def about(request):
+    restaurant = Restaurant.objects.first()  # assuming one restaurant
+    return render(request, "home/about.html", {"restaurant": restaurant})
