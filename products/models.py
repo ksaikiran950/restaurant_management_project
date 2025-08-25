@@ -28,4 +28,15 @@ class MenuItem(models.Model):
     def __str__(self):
         return self.name
 
+class Restaurant(models.Model):
+    name = models.CharField(max_length=255)
+    address = models.TextField()
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    zip_code = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20, blank=True, null=True)  #  new field
+    opening_hours = models.TextField(blank=True, null=True)
+    logo = models.ImageField(upload_to="logos/", blank=True, null=True)
 
+    def __str__(self):
+        return self.name
