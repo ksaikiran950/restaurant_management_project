@@ -57,6 +57,11 @@ margin-top: 50px;
 <p>Enjoy delicious meals made with love. Explore our menu and place your order online!</p>
 <a href="{% url 'menu' %}" class="btn btn-custom">View Menu</a>
 </section>
+<section class ="date-time">
+    <h2>Current Date & Time </h2>
+    <p> Today is : {%now "l,d M Y" %}</p>
+    <p>Current Time : { % now "H:i:s" %}</p>
+</section>
 
 <footer>
 <p>&copy; {{ restaurant_name }} - {{ now|date:"Y" }}</p>
