@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bread Crumbs
+        </title>
+    </head>
+    <body>
+        <nav aria-label="breadcrumb">
+            <ol style="list-style: none; display: flex; gap:8px;"
+            {% for crumb in breadcrumbs %}
+                {% if not forloop last %}
+                <li><a href="{{ crumb.url}}">{{ crumb.name }}</a>&gt;</li>
+                {% else %}
+                    <li>{{ crumb.name }}</li>
+                {% endif %}
+                {% endfor %}
+            </ol>
+        </nav>
+    </body>
+</html>
