@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            .login-form{
+            max-max-width:400px;
+            margin: 50px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-form">
+            <h2>Login</h2>
+            {% if form.errors %}
+                <div class="error">Invalid username or password </div>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </body>
+</html>
