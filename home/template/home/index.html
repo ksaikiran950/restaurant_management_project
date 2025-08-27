@@ -24,7 +24,12 @@ style="margin-top: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,
             <h1>{{ restaurant_name }}</h1>
                     <p>Welcome to our restaurant! Were glad to serve you.</p>
                     <p class="phone"> Call us: {{phone_number}} </p>
+                    <a href="{% url 'place_order'%}" class="order-button" > Order Now </a>
                         </div>
+
+
+
+
 <footer style="background-color: #333;color: white; text-align: center; padding: 15px; margin-top: 40px;">
             <p style="margin: 0;">&copy; 2025 {{ restaurant_name }}. All rights reserved.</p>
 </footer>
