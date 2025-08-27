@@ -63,3 +63,6 @@ def home(request):
 def about(request):
     restaurant = Restaurant.objects.first()  # assuming one restaurant
     return render(request, "home/about.html", {"restaurant": restaurant})
+
+def privacy_policy(request):
+    return render(request,'home/privacy_policy.html')
