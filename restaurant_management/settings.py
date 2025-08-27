@@ -148,3 +148,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DEFAULT_FROM_EMAIL = 'noreply@restaurant.com'
 RESTAURANT_EMAIL = 'restaurant@example.com'
+
+
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
