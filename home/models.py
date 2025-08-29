@@ -45,3 +45,11 @@ class TodaySpecial(models.py):
 
     def __str__(self):
         return self.name
+
+class Feedback(models.Model):
+    name =models.CharField(max_length=100)
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name}-{self.sub,itted_at.strftime('%Y-%m-%d %H:%M')}"
