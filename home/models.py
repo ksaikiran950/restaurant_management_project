@@ -25,7 +25,7 @@ class RestaurantLocation(models.Model):
 class Restaurant(models.Model):
     name = models.CharField(max_length=150)
     address = models.TextField()
-    phone = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=15)
     image=models.ImageField(upload_to='restaurant_images/'blank=True,null=True)
 
 # Opening hours stored as a JSON object
