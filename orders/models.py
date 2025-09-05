@@ -1,7 +1,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
-from products.models import MenuItem  # assuming MenuItem is in products app
+from products.models import MenuItem  
 
 class Order(models.Model):
     STATUS_CHOICES = [('PENDING', 'Pending'),('CONFIRMED', 'Confirmed'),('DELIVERED', 'Delivered'),('CANCELLED', 'Cancelled'),]
