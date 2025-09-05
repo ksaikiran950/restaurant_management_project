@@ -4,7 +4,6 @@ from .forms import ContactForm
 from products.models import MenuItem
 from .models import Restaurant
 
-# Optional Restaurant import
 try:
     from products.models import Restaurant
 except ImportError:
